@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Simple Send Email Services</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI,system-ui,Arial;
+  color:white;
+  background:
+    radial-gradient(circle at 20% 10%, #2f6dff55, transparent 40%),
+    radial-gradient(circle at 80% 20%, #00c6ff33, transparent 45%),
+    linear-gradient(180deg,#07132c,#0b1f4d);
+}
+
+/* layout */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:30px 20px;
+}
+
+/* header */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:60px;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo img{
+  height:46px;
+}
+
+.domain{
+  opacity:.8;
+  font-size:14px;
+}
+
+/* hero */
+.hero{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.hero h1{
+  font-size:48px;
+  margin:10px 0;
+}
+
+.hero p{
+  font-size:18px;
+  opacity:.85;
+  max-width:650px;
+  margin:auto;
+  line-height:1.6;
+}
+
+.buttons{
+  margin-top:25px;
+}
+
+.btn{
+  padding:14px 22px;
+  border-radius:999px;
+  border:none;
+  margin:6px;
+  font-size:15px;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-block;
+}
+
+.primary{
+  background:linear-gradient(90deg,#5bc0ff,#2f6dff);
+  color:white;
+}
+
+.secondary{
+  background:#ffffff11;
+  border:1px solid #ffffff33;
+  color:white;
+}
+
+/* cards */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#ffffff0c;
+  border:1px solid #ffffff1a;
+  border-radius:16px;
+  padding:22px;
+  backdrop-filter:blur(8px);
+}
+
+.card h3{
+  margin-top:0;
+}
+
+.footer{
+  text-align:center;
+  margin-top:60px;
+  opacity:.6;
+  font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">
+    <img src="SimpleSend-logo-A.png" alt="Simple Send Logo">
+  </div>
+  <div class="domain">sse.ooo</div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Email that just works.</h1>
+
+  <p>
+    Simple Send Email Services provides secure, professional email hosting
+    for businesses using their own domain name.
+    We handle setup, migration, and support — without the clutter.
+  </p>
+
+  <div class="buttons">
+    <a id="setupBtn" class="btn primary">Request Setup</a>
+    <a id="supportBtn" class="btn secondary">Existing Customer Support</a>
+  </div>
+
+  <p style="margin-top:20px;opacity:.7;">
+    Serving businesses in Oklahoma and beyond.
+    Works with Outlook, Apple Mail, mobile devices, and webmail.
+  </p>
+</div>
+
+<!-- FEATURES -->
+<div class="grid">
+
+  <div class="card">
+    <h3>Your domain, your address</h3>
+    <p>Professional email using your own domain — not a generic mailbox.</p>
+  </div>
+
+  <div class="card">
+    <h3>Secure & reliable</h3>
+    <p>Built for deliverability, spam protection, and dependable access across devices.</p>
+  </div>
+
+  <div class="card">
+    <h3>Human support</h3>
+    <p>When something isn’t right, you can reach a real person who can fix it.</p>
+  </div>
+
+  <div class="card">
+    <h3>What we handle</h3>
+    <p>
+      ✔ Mailbox setup<br>
+      ✔ Migration from existing providers<br>
+      ✔ SPF / DKIM / DMARC guidance
+    </p>
+  </div>
+
+</div>
+
+<div class="footer">
+  © <span id="year"></span> Simple Send Email Services — sse.ooo
+</div>
+
+</div>
+
+<!-- EMAIL PROTECTION (Option 1) -->
+<script>
+(function(){
+  const user="support";
+  const domain="sse.ooo";
+  const email=user+"@"+domain;
+
+  document.getElementById("setupBtn").href =
+    "mailto:"+email+
+    "?subject=Email Hosting Setup Request";
+
+  document.getElementById("supportBtn").href =
+    "mailto:"+email+
+    "?subject=Support Request";
+
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>
